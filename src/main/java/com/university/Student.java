@@ -5,11 +5,20 @@ public class Student extends AcademicPerson implements Printable{
     int studentID;
     String major;
     private double gpa;
+    static int totalStudents = 0;
 
     Student(String name, int studentID, String major){
         this.name = name;
         this.studentID = studentID;
         this.major = major;
+        totalStudents++;
+
+        // updating the database
+
+    }
+
+    static int getTotalStudents(){
+        return totalStudents;
     }
 
     void enrollInCourse(String courseName){
